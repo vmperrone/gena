@@ -3,7 +3,7 @@ import { withStyles } from "@material-ui/core/styles";
 import { createMuiTheme } from "material-ui/styles";
 import PropTypes from "prop-types";
 import { BottomBar } from "../MainPage";
-import page_one from "../../../pages/page_1.png";
+import page_one from "~/pages/page_1.png";
 
 const theme = createMuiTheme({
   palette: {
