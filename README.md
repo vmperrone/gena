@@ -1,2 +1,0 @@
-# gena
-Created with CodeSandbox

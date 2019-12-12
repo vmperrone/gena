@@ -1,0 +1,7 @@
+/*
+- Clicking the number turns it to text input for page number
+- Add About, Contents, and Shop pages
+- Upload pages to cheap/free file hosting and use 
+that to programmatically go to next page
+- Host on Netlify or similar
+*/
