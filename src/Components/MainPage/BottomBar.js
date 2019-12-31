@@ -120,73 +120,10 @@ const styles = {
   }
 };
 
-function print_arrow_key(keyCodeNumber) {
-  let LEFT, UP, RIGHT, DOWN;
 
-  LEFT = 37;
-  UP = 38;
-  RIGHT = 39;
-  DOWN = 40;
-
-  switch (keyCodeNumber) {
-    case LEFT:
-      ChangePageBack();
-      break;
-    case UP:
-      break;
-    case RIGHT:
-      ChangePageForward();
-      break;
-    case DOWN:
-      break;
-    default:
-      break;
-  }
-}
-
-function checkKeycode(event) {
-  let keyDownEvent = event || window.event,
-    keycode = keyDownEvent.which ? keyDownEvent.which : keyDownEvent.keyCode;
-
-  print_arrow_key(keycode);
-
-  return false;
-}
-
-document.onkeydown = checkKeycode;
-
-let thispage = 1;
-let totalpages = 2;
-// fullwidth: https://i.stack.imgur.com/Qafwh.jpg
-// img1: https://i.stack.imgur.com/WMVv1.jpg
-// img2: https://i.stack.imgur.com/ddMMK.jpg
-
-function ChangePageBack() {
-  if (thispage > 1) {
-    thispage = thispage - 1;
-
-    let img = document.getElementById("page-image");
-    img.src = "https://i.imgur.com/SpDoXiu.jpg";
-
-    let pgn = document.getElementById("page-number");
-    pgn.textContent = thispage;
-  }
-}
-
-function ChangePageForward() {
-  if (thispage < totalpages) {
-    thispage = thispage + 1;
-
-    let img = document.getElementById("page-image");
-    img.src = "https://i.imgur.com/RjQa4Ka.jpg";
-
-    let pgn = document.getElementById("page-number");
-    pgn.textContent = thispage;
-  }
-}
 
 function BottomBar(props) {
-  const { classes } = props;
+  const { classes, pageIndex, changePage } = props;
   return (
     <Fragment>
       <div className={classes.Paper2}>
@@ -218,7 +155,7 @@ function BottomBar(props) {
         >
           <MuiThemeProvider theme={theme}>
             <Fab
-              onClick={ChangePageBack}
+              onClick={() => changePage(-1)}
               aria-label="FirstPage"
               className={classes.fab}
               color="primary"
@@ -238,7 +175,7 @@ function BottomBar(props) {
               </div>
             </Fab>
             <Fab
-              onClick={ChangePageBack}
+              onClick={() => changePage(-1)}
               aria-label="KeyboardArrowLeft"
               className={classes.fab}
               color="primary"
@@ -270,12 +207,12 @@ function BottomBar(props) {
                 }}
               >
                 <font id="page-number" size="5">
-                  {thispage}
+                  {pageIndex + 1}
                 </font>
               </div>
             </Fab>
             <Fab
-              onClick={ChangePageForward}
+              onClick={() => changePage(1)}
               aria-label="KeyboardArrowRight"
               className={classes.fab}
               color="primary"
@@ -293,7 +230,7 @@ function BottomBar(props) {
               </div>
             </Fab>
             <Fab
-              onClick={ChangePageForward}
+              onClick={() => changePage(1)}
               aria-label="LastPage"
               className={classes.fab}
               color="primary"
