@@ -2,8 +2,7 @@ import React, { Fragment } from "react";
 import { withStyles } from "@material-ui/core/styles";
 import { createMuiTheme } from "material-ui/styles";
 import PropTypes from "prop-types";
-import { BottomBar } from "../MainPage";
-import page_one from "../../pages/page_1.png";
+import pages from "../../pages";
 
 const theme = createMuiTheme({
   palette: {
@@ -51,10 +50,58 @@ const styles = {
     margin: "auto",
     display: "flex",
     alignItems: "center"
+  },
+  AFrameWrapper: {
+    width: "100%",
+    backgroundColor: 'white',
+    height: "calc(100vh - 66px)",
+    position: "relative",
   }
 };
 
-function FloatingActionButtons() {
+function Pair({classes, pageIndex, changePage}) {
+
+  let page = pages[pageIndex];
+  let content;
+  switch (page.type) {
+    case 'image':
+      content = (
+        <img
+          id="page-image"
+          onClick={() => changePage(1)}
+          src={page.src}
+          style={{
+            width: "100%",
+            maxWidth: "850px",
+            marginLeft: "auto",
+            marginRight: "auto",
+            marginBottom: "70px",
+            display: "block",
+            boxShadow:
+              "2px 2px 8px 0 rgba(0, 0, 0, 0.2), 1px 1px 20px 0 rgba(0, 0, 0, 0.19)",
+            borderRadius: "15px"
+          }}
+          alt="PageImage"
+        />
+      );
+      break;
+    case 'aframe':
+      let Component = page.src;
+      content = (
+        <div
+          className={classes.AFrameWrapper}
+        >
+          <Component/>
+        </div>
+      );
+      break;
+    default:
+      content = (
+        null
+      );
+      break;
+  }
+
   return (
     /*
     <Fragment>
@@ -99,30 +146,14 @@ function FloatingActionButtons() {
           display: "block"
         }}
       >
-        <img
-          onClick={BottomBar.ChangePageBack}
-          id="page-image"
-          src={page_one}
-          style={{
-            width: "100%",
-            maxWidth: "850px",
-            marginLeft: "auto",
-            marginRight: "auto",
-            marginBottom: "70px",
-            display: "block",
-            boxShadow:
-              "2px 2px 8px 0 rgba(0, 0, 0, 0.2), 1px 1px 20px 0 rgba(0, 0, 0, 0.19)",
-            borderRadius: "15px"
-          }}
-          alt="PageImage"
-        />
+        {content}
       </div>
     </Fragment>
   );
 }
 
-FloatingActionButtons.propTypes = {
+Pair.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(FloatingActionButtons);
+export default withStyles(styles)(Pair);
