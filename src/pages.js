@@ -8,7 +8,8 @@ const pages = [{
   src: 'https://i.imgur.com/RjQa4Ka.jpg'
 }, {
   type: 'aframe',
-  src: Levi2
+  src: Levi2,
+  audio: '/audio/meteor-theory.mp3'
 }];
 
 export default pages;
