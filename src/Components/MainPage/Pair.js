@@ -1,8 +1,9 @@
-import React, { Fragment } from "react";
-import { withStyles } from "@material-ui/core/styles";
-import { createMuiTheme } from "material-ui/styles";
+import React, {Fragment, useEffect, useRef, useState} from "react";
+import {withStyles} from "@material-ui/core/styles";
+import {createMuiTheme} from "material-ui/styles";
 import PropTypes from "prop-types";
 import pages from "../../pages";
+import {FaVolumeMute, FaVolumeUp} from 'react-icons/fa';
 
 const theme = createMuiTheme({
   palette: {
@@ -56,10 +57,50 @@ const styles = {
     backgroundColor: 'white',
     height: "calc(100vh - 66px)",
     position: "relative",
+  },
+  Icon: {
+    color: 'white',
+    fontSize: '22px',
+    position: 'absolute',
+    right: '8px',
+    top: '8px',
+    cursor: 'pointer',
+    zIndex: '999',
   }
 };
 
-function Pair({classes, pageIndex, changePage}) {
+function Pair({ classes, pageIndex, changePage }) {
+
+  let [volumeOn, setVolumeOn] = useState(true);
+  useEffect(() => {
+    let volume = localStorage.getItem('volume');
+    if (volume === 'false') {
+      setVolumeOn(false);
+    }
+  }, [])
+  let toggleVolume = (state) => {
+    setVolumeOn(state);
+    localStorage.setItem('volume', state);
+  }
+  let audioRef = useRef(new Audio)
+  useEffect(() => {
+    let audio = pages[pageIndex] && pages[pageIndex].audio;
+    audioRef.current.src = audio || '';
+    if (audio) {
+      audioRef.current.play();
+    } else {
+      audioRef.current.pause();
+    }
+  }, [pageIndex]);
+  useEffect(() => {
+    if (volumeOn) {
+      console.log('on');
+      audioRef.current.volume = 1;
+    } else {
+      console.log('off');
+      audioRef.current.volume = 0;
+    }
+  }, [volumeOn])
 
   let page = pages[pageIndex];
   let content;
@@ -102,37 +143,20 @@ function Pair({classes, pageIndex, changePage}) {
       break;
   }
 
+  const audioIcon = page.audio ? (
+    volumeOn ? (
+      <FaVolumeUp style={styles.Icon} onClick={() => toggleVolume(false)} />
+    ) : (
+      <FaVolumeMute style={styles.Icon} onClick={() => toggleVolume(true)}/>
+    )
+  ) : null;
+
   return (
-    /*
     <Fragment>
-      <body>
-        <div style={{ width: "100%", height: "600px" }}>
-          <a-scene background="color: #ECECEC" embedded>
-            <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9" />
-            <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E" />
-            <a-cylinder
-              position="1 0.75 -3"
-              radius="0.5"
-              height="1.5"
-              color="#FFC65D"
-            />
-            <a-plane
-              position="0 0 -4"
-              rotation="-90 0 0"
-              width="4"
-              height="4"
-              color="#7BC8A4"
-            />
-          </a-scene>
-        </div>
-      </body>
-    </Fragment>
-    */
-    <Fragment>
-      <script src="https://d3js.org/d3.v4.min.js" />
-      <script src="https://aframe.io/releases/0.9.1/aframe.min.js" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+      <script src="https://d3js.org/d3.v4.min.js"/>
+      <script src="https://aframe.io/releases/0.9.1/aframe.min.js"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
 
       <div
         id="Pageimage"
@@ -143,9 +167,11 @@ function Pair({classes, pageIndex, changePage}) {
           marginLeft: "auto",
           marginRight: "auto",
           marginBottom: "100px",
-          display: "block"
+          display: "block",
+          position: "relative"
         }}
       >
+        {audioIcon}
         {content}
       </div>
     </Fragment>
