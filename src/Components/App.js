@@ -44,22 +44,34 @@ export default class extends Component {
     document.removeEventListener("keydown", this.checkKeycode, false);
   }
 
-  changePage = (direction) => {
+  changePage = (direction, traverse) => {
     // DH: These comments were with this code before it was moved from BottomBar...
     // fullwidth: https://i.stack.imgur.com/Qafwh.jpg
     // img1: https://i.stack.imgur.com/WMVv1.jpg
     // img2: https://i.stack.imgur.com/ddMMK.jpg
     if (direction < 0) {
       if (this.state.pageIndex > 0) {
-        this.setState({
-          pageIndex: this.state.pageIndex - 1
-        });
+        if (traverse) {
+          this.setState({
+            pageIndex: 0
+          });
+        } else {
+          this.setState({
+            pageIndex: this.state.pageIndex - 1
+          });
+        }
       }
     } else {
       if (this.state.pageIndex < pages.length - 1) {
-        this.setState({
-          pageIndex: this.state.pageIndex + 1
-        });
+        if (traverse) {
+          this.setState({
+            pageIndex: pages.length - 1
+          });
+        } else {
+          this.setState({
+            pageIndex: this.state.pageIndex + 1
+          });
+        }
       }
     }
   }
@@ -72,7 +84,7 @@ export default class extends Component {
         <Fragment>
           <Header />
           <Pair pageIndex={pageIndex} changePage={(dir) => this.changePage(dir)}/>
-          <BottomBar pageIndex={pageIndex} changePage={(dir) => this.changePage(dir)}/>
+          <BottomBar pageIndex={pageIndex} changePage={(dir, traverse) => this.changePage(dir, traverse)}/>
         </Fragment>
       </JssProvider>
     );

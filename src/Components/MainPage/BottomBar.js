@@ -155,7 +155,7 @@ function BottomBar(props) {
         >
           <MuiThemeProvider theme={theme}>
             <Fab
-              onClick={() => changePage(-1)}
+              onClick={() => changePage(-1, true)}
               aria-label="FirstPage"
               className={classes.fab}
               color="primary"
@@ -230,7 +230,7 @@ function BottomBar(props) {
               </div>
             </Fab>
             <Fab
-              onClick={() => changePage(1)}
+              onClick={() => changePage(1, true)}
               aria-label="LastPage"
               className={classes.fab}
               color="primary"
