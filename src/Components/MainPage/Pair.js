@@ -58,6 +58,14 @@ const styles = {
     height: "calc(100vh - 66px)",
     position: "relative",
   },
+  TextWrapper: {
+    width: "100%",
+    maxWidth: "800px",
+    backgroundColor: 'white',
+    position: "relative",
+    borderRadius: "15px",
+    padding: "15px 40px"
+  },
   Icon: {
     color: 'white',
     fontSize: '22px',
@@ -135,6 +143,16 @@ function Pair({ classes, pageIndex, changePage }) {
           <Component/>
         </div>
       );
+      break;
+    case 'text':
+      let TextComponent = page.src;
+      content = (
+        <div
+          className={classes.TextWrapper}
+        >
+          <TextComponent/>
+        </div>
+      )
       break;
     default:
       content = (
