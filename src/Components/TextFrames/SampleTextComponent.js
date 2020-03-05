@@ -1,21 +1,28 @@
 import React from 'react';
 
 const styles = {
-  Paper: {
-    backgroundColor: "transparent",
-    height: "105vh",
-    display: "flex",
-    alignItems: "center"
+  Wrapper: {
+    display: 'inline-block'
   },
+  FloatRightImage: {
+    float: "right",
+    maxWidth: '50%'
+  }
 };
 
 const SampleTextComponent = () => {
   return (
-    <div>
+    <div style={styles.Wrapper}>
       <h1>Sample Text Here</h1>
+      <img style={styles.FloatRightImage} src="/images/sample.png" alt="sample"/>
       <p>
-        Paragraph one sample text would go here. This can be a longer paragraph. We can have links in it:
-        <a href="https://www.google.com">Google</a>
+        <p>
+          Paragraph one sample text would go here. This can be a longer paragraph. We can have links in it:
+          <a href="https://www.google.com">Google</a>
+        </p>
+        <p>
+          Another sample paragraph of text that could go here
+        </p>
       </p>
     </div>
   )
