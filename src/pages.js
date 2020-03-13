@@ -15,19 +15,19 @@ const pages = [{
   src: 'https://i.imgur.com/2Qwwtte.jpg'
 }, {
   type: 'image',
-  src: 'https://i.imgur.com/a2DD50e.jpg'
-}, {
-  type: 'image',
-  src: 'https://i.imgur.com/LzESFQq.jpg'
+  src: 'https://i.imgur.com/jpk3xs4.jpg'
 }, {
   type: 'image',
   src: 'https://i.imgur.com/dabOLIr.jpg'
 }, {
   type: 'image',
-  src: 'https://i.imgur.com/jpk3xs4.jpg'
+  src: 'https://i.imgur.com/E2VZRw3.jpg'
 }, {
   type: 'image',
-  src: 'https://i.imgur.com/E2VZRw3.jpg'
+  src: 'https://i.imgur.com/a2DD50e.jpg'
+}, {
+  type: 'image',
+  src: 'https://i.imgur.com/LzESFQq.jpg'
 }, {
   type: 'image',
   src: 'https://i.imgur.com/HBFmukv.jpg'
