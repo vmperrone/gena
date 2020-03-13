@@ -13,12 +13,11 @@ const styles = {
 const SampleTextComponent = () => {
   return (
     <div style={styles.Wrapper}>
-      <h1>Sample Text Here</h1>
-      <img style={styles.FloatRightImage} src="/images/sample.png" alt="sample"/>
+      <h1>Thank you for reading!</h1>
+      <img style={styles.FloatRightImage} src="https://i.pinimg.com/originals/8d/44/cb/8d44cbe8d661d91a8d8415298253a737.jpg" alt="sample"/>
       <p>
         <p>
-          Paragraph one sample text would go here. This can be a longer paragraph. We can have links in it:
-          <a href="https://www.google.com">Google</a>
+          Stay tuned for chapter 2. In the meantime, please check out the Kickstarter! The rewards are some cute keychains :)
         </p>
         <p>
           Another sample paragraph of text that could go here
