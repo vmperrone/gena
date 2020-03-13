@@ -111,7 +111,7 @@ const pages = [{
   src: 'https://i.imgur.com/iwnDH3i.jpg'
 }, {
   type: 'image',
-  src: 'https://i.imgur.com/iwnDH3i.jpg'
+  src: 'https://i.imgur.com/OcDnQzu.jpg'
 }, {
   type: 'image',
   src: 'https://i.imgur.com/g2U6Ney.jpg'
@@ -124,6 +124,33 @@ const pages = [{
 }, {
   type: 'image',
   src: 'https://i.imgur.com/LwE3LyZ.jpg'
+}, {
+  type: 'image',
+  src: 'https://i.imgur.com/LwE3LyZ.jpg'
+}, {
+  type: 'image',
+  src: 'https://i.imgur.com/5PqRhbe.jpg'
+}, {
+  type: 'image',
+  src: 'https://i.imgur.com/5PqRhbe.jpg'
+}, {
+  type: 'image',
+  src: 'https://i.imgur.com/mNhmNxO.jpg'
+}, {
+  type: 'image',
+  src: 'https://i.imgur.com/IfMP2hA.jpg'
+}, {
+  type: 'image',
+  src: 'https://i.imgur.com/EDihFOe.jpg'
+}, {
+  type: 'image',
+  src: 'https://i.imgur.com/oR5vNm6.jpg'
+}, {
+  type: 'image',
+  src: 'https://i.imgur.com/6WgXmET.jpg'
+}, {
+  type: 'image',
+  src: 'https://i.imgur.com/6WgXmET.jpg'
 }, {
   type: 'aframe',
   src: Levi2,
