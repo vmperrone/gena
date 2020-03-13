@@ -17,10 +17,10 @@ const SampleTextComponent = () => {
       <img style={styles.FloatRightImage} src="https://i.pinimg.com/originals/8d/44/cb/8d44cbe8d661d91a8d8415298253a737.jpg" alt="sample"/>
       <p>
         <p>
-          Stay tuned for chapter 2. In the meantime, please check out the Kickstarter! The rewards are some cute keychains :)
+          Stay tuned for chapter 2.
         </p>
         <p>
-          Another sample paragraph of text that could go here
+          In the meantime, please check out the Kickstarter! The rewards are some cute keychains :)
         </p>
       </p>
     </div>
