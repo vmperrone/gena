@@ -152,6 +152,15 @@ const pages = [{
   type: 'image',
   src: 'https://i.imgur.com/Xrpelll.jpg'
 }, {
+  type: 'image',
+  src: 'https://i.imgur.com/nUH1sgC.jpg'
+}, {
+  type: 'image',
+  src: 'https://i.imgur.com/QjxJwo7.jpg'
+}, {
+  type: 'image',
+  src: 'https://i.imgur.com/IA9YXwl.jpg'
+}, {
   type: 'aframe',
   src: Levi2,
   audio: '/audio/meteor-theory.mp3'
