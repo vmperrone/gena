@@ -105,7 +105,7 @@ const pages = [{
   src: 'https://i.imgur.com/zf2k08U.jpg'
 }, {
   type: 'image',
-  src: 'https://i.imgur.com/WbJMlFl.png'
+  src: 'https://i.imgur.com/VE7FqzO.png'
 }, {
   type: 'image',
   src: 'https://i.imgur.com/iwnDH3i.jpg'
