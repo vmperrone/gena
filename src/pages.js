@@ -123,10 +123,10 @@ const pages = [{
   src: 'https://i.imgur.com/SQ10XNn.jpg'
 }, {
   type: 'image',
-  src: 'https://i.imgur.com/LwE3LyZ.jpg'
+  src: 'https://i.imgur.com/rn5BUMB.jpg'
 }, {
   type: 'image',
-  src: 'https://i.imgur.com/LwE3LyZ.jpg'
+  src: 'https://i.imgur.com/oZgO2Ex.jpg'
 }, {
   type: 'image',
   src: 'https://i.imgur.com/5PqRhbe.jpg'
