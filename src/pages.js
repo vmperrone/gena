@@ -132,6 +132,9 @@ const pages = [{
   src: 'https://i.imgur.com/5PqRhbe.jpg'
 }, {
   type: 'image',
+  src: 'https://i.imgur.com/f1VB1Lw.jpg'
+}, {
+  type: 'image',
   src: 'https://i.imgur.com/mNhmNxO.jpg'
 }, {
   type: 'image',
