@@ -19,9 +19,6 @@ const SampleTextComponent = () => {
         <p>
           Stay tuned for chapter 2.
         </p>
-        <p>
-          In the meantime, please check out the <a href="https://www.kickstarter.com/projects/vmarino/genetic-algorithm-part-2?ref=project_build">Kickstarter</a>! The rewards are some cute keychains :)
-        </p>
       </p>
     </div>
   )
