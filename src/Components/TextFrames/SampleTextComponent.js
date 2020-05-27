@@ -17,7 +17,7 @@ const SampleTextComponent = () => {
       <img style={styles.FloatRightImage} src="https://i.pinimg.com/originals/8d/44/cb/8d44cbe8d661d91a8d8415298253a737.jpg" alt="genetic algorithm comic icon"/>
       <p>
         <p>
-          Chapter 2 pages are available on Patreon! <a href="https://www.patreon.com/user?u=34441473&fan_landing=true">Link</a>
+          <a href="https://www.patreon.com/user?u=34441473&fan_landing=true">Chapter 2 pages are available on Patreon! Link here: https://www.patreon.com/user?u=34441473&fan_landing=true</a>
         </p>
       </p>
     </div>
