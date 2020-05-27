@@ -14,10 +14,10 @@ const SampleTextComponent = () => {
   return (
     <div style={styles.Wrapper}>
       <h1>Thank you for reading!</h1>
-      <img style={styles.FloatRightImage} src="https://i.pinimg.com/originals/8d/44/cb/8d44cbe8d661d91a8d8415298253a737.jpg" alt="sample"/>
+      <img style={styles.FloatRightImage} src="https://i.pinimg.com/originals/8d/44/cb/8d44cbe8d661d91a8d8415298253a737.jpg" alt="genetic algorithm comic icon"/>
       <p>
         <p>
-          Stay tuned for chapter 2.
+          Chapter 2 pages are available on Patreon! <a href="https://www.patreon.com/user?u=34441473&fan_landing=true">Link</a>
         </p>
       </p>
     </div>
